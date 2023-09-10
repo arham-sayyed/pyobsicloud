@@ -1,26 +1,10 @@
-def convert_to_python_dict(filename='config.txt'):
-    # Read the contents of the file
-    with open(filename, 'r') as f:
-        contents = f.read()
 
-    # Replace JavaScript object syntax to Python dictionary syntax
-    contents = contents.replace('{', '{\n')
-    contents = contents.replace('}', '\n}')
-    contents = contents.replace(':', ': ')
-    contents = contents.replace(',', ',\n')
-
-    # Remove const declaration and unnecessary characters
-    lines = contents.splitlines()
-    lines = [line.strip() for line in lines if line.strip() and not line.strip().startswith('const')]
-
-    # Create the final dictionary string
-    python_dict_str = '\n'.join(lines)
-
-    # Save the Python dictionary back to the file
-    with open(filename, 'w') as f:
-        f.write(python_dict_str)
-
-    print(f"Converted JS object to Python dictionary in {filename}")
-
-# Call the function
-convert_to_python_dict()
+firebaseConfig = {
+    "apiKey": "AIzaSyBwMVeXM76He5PXH18zyYM6RxNGUdduDKA",
+    "authDomain": "pyobsicloud.firebaseapp.com",
+    "projectId": "pyobsicloud",
+    "storageBucket": "pyobsicloud.appspot.com",
+    "messagingSenderId": "467802893366",
+    "appId": "1:467802893366:web:327cf75e5150d88377bc97",
+    "measurementId": "G-9CC48P9SPR"
+}
